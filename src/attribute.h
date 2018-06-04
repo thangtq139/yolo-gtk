@@ -5,7 +5,7 @@
 
 #define YOLO_WEIGHT_FILE		"model/yolov3.weights"
 
-#define UI_MAIN_FILE "default.xml
+#define UI_MAIN_FILE "default.xml"
 
 
 static char UI_MAIN_STR[] =
