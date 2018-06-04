@@ -8,3 +8,6 @@ all: main
 
 main: src/main.c
 	$(GCC) $(CFLAGS) -o main src/main.c $(LIBS)
+
+clean:
+	rm main

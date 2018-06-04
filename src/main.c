@@ -52,13 +52,13 @@ int main(int argc, char *argv[])
 
 	g_builder = gtk_builder_new();
 	
+	g_printerr("Loading UI design from file: %s\n", UI_MAIN_FILE);
 	if (gtk_builder_add_from_file(g_builder, UI_MAIN_FILE, &error) == 0) {
-		g_printerr("Unable to load UI from file: %s; Message = %s\n",
-				UI_MAIN_FILE, error->message);
-		g_printerr("Load UI from string\n");
+		g_printerr("%s\n", error->message);
+		g_printerr("Load UI design from string\n");
 		g_clear_error(&error);
 		if (gtk_builder_add_from_string(g_builder, UI_MAIN_STR, -1, &error) == 0) {
-			g_printerr("Unable to load UI from string: %s\n", error->message);
+			g_printerr("%s\n", error->message);
 			g_clear_error(&error);
 			return 1;
 		}
