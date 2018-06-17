@@ -1,8 +1,9 @@
 GCC = gcc
+# GCC = nvcc
 
-CFLAGS = `pkg-config --cflags gtk+-3.0` -Idarknet/include/
+CFLAGS = -DOPENCV `pkg-config --cflags gtk+-2.0` `pkg-config --cflags opencv` -Idarknet/include/
 
-LIBS = `pkg-config --libs gtk+-3.0` darknet/libdarknet.a -lm
+LIBS = `pkg-config --libs gtk+-2.0` `pkg-config --libs opencv` darknet/libdarknet.a -lm
 
 all: main
 
